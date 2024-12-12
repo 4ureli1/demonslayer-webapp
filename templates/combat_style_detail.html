@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ combat_style.name }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        img { max-width: 300px; display: block; margin: 20px 0; }
+        a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <h1>{{ combat_style['name'] }}</h1>
+    <img src="{{ combat_style['img'] }}" alt="{{ combat_style['name'] }}">
+    <p>{{ combat_style['description'] }}</p>
+    <a href="/combat-styles">Back to Combat Styles</a>
+</body>
+</html>

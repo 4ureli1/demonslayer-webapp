@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ character['name'] }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        img { max-width: 300px; display: block; margin: 20px 0; }
+        a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <h1>{{ character['name'] }}</h1>
+    <img src="{{ character['img'] }}" alt="{{ character['name'] }}">
+    <p><strong>Age:</strong> {{ character['age'] }}</p>
+    <p><strong>Gender:</strong> {{ character['gender'] }}</p>
+    <p><strong>Race:</strong> {{ character['race'] }}</p>
+    <p>{{ character['description'] }}</p>
+    <p><strong>Quote:</strong> "{{ character['quote'] }}"</p>
+    <a href="/characters">Back to Characters</a>
+</body>
+</html>

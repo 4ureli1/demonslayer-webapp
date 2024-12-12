@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon Slayer Characters</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .character { margin: 10px 0; padding: 10px; border: 1px solid #ddd; display: flex; align-items: center; }
+        .character img { max-width: 100px; margin-right: 20px; }
+        a { text-decoration: none; color: blue; }
+        .pagination { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Demon Slayer Characters</h1>
+    <div>
+        {% for character in characters %}
+            <div class="character">
+                <img src="{{ character.img }}" alt="{{ character.name }}">
+                <div>
+                    <h2>{{ character.name }}</h2>
+                    <p><strong>Age:</strong> {{ character.age }}</p>
+                    <p><strong>Gender:</strong> {{ character.gender }}</p>
+                    <p><strong>Race:</strong> {{ character.race }}</p>
+                    <p>{{ character.description }}</p>
+                    <p><strong>Quote:</strong> "{{ character.quote }}"</p>
+                    <a href="/characters/{{ character.id }}">View Details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        <a href="/?page={{ page - 1 }}" {% if page <= 1 %} style="visibility:hidden" {% endif %}>Previous</a>
+        <a href="/?page={{ page + 1 }}">Next</a>
+    </div>
+    <div>
+        <a href="/combat-styles">Go to Combat Styles</a>
+    </div>
+</body>
+</html>
